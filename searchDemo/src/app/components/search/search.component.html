@@ -1,0 +1,15 @@
+<div class="top">
+  <input type="text" [(ngModel)]="keyword"> <div class="btn" (click)="doSearch()">搜索</div>
+</div>
+
+<div class="content">
+  <ul>
+  <li *ngFor="let item of historyList;let key = index">{{item}}----<span class="del" (click)="delHistory(key)">删除</span>   </li>
+  </ul>
+</div>
+
+<pre>
+  {{historyList | json}}
+  {{keyword | json}}
+</pre>
+
