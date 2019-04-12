@@ -1,0 +1,45 @@
+<!--<h2>人员登记系统</h2>-->
+<!--<ul class="form-list">-->
+<!--  <li >-->
+<!--    <label >姓名：</label>-->
+<!--    <input type="text" [(ngModel)]="peopleInfo.username" />-->
+<!--  </li>-->
+<!--  <button (click)="doSubmit()">点我获取数据</button>-->
+
+<!--  <pre>-->
+<!--    {{peopleInfo | json}}-->
+<!--  </pre>-->
+<!--</ul>-->
+
+<h2>人员登记系统</h2>
+<ul class="form-list">
+  <li class="form-name">
+  <span>姓名：</span>
+  <input type="text" [(ngModel)]="peopleInfo.username">
+  </li>
+  <li class="form-gender">
+    <span>性别：</span>
+    <input type="radio" value='1' id="sex1" name="sex" [(ngModel)]="peopleInfo.sex"><label for="sex1">男</label>
+    <input type="radio" value='2' id="sex2" name="sex" [(ngModel)]="peopleInfo.sex"><label for="sex2">女</label>
+  </li>
+  <li class="form-city">
+    <span>城市：</span>
+    <select name="city" id="city" [(ngModel)]="peopleInfo.city">
+      <option [value]="item" *ngFor="let item of peopleInfo.citylist">{{item}}</option>
+    </select>
+  </li>
+  <li class="form-hobby">
+    <span>爱好：</span>
+    <span *ngFor="let item of peopleInfo.hobby;let key = index">
+      <input type="checkbox" [id]="'check'+ key" [(ngModel)]="item.checked" /><label [for]="'check'+ key">{{item.title}}</label>
+    </span>
+  </li>
+  <li>
+    <span>备注：</span>
+    <textarea name="mark" id="mark" cols="30" rows="10" [(ngModel)]="peopleInfo.mark"></textarea>
+  </li>
+  <span class="btnGetInfo" (click)="getInfo()">点击我获取数据</span>
+</ul>
+<pre>
+  {{peopleInfo | json}}
+</pre>

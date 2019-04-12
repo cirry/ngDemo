@@ -1,0 +1,26 @@
+h2{
+  text-align: center;
+}
+.form-list{
+  line-height: 40px;
+  width: 400px;
+  border: 1px solid #eee;
+  margin: 0 auto;
+  li{
+    margin: 20px auto;
+  }
+  .form-name{
+    input{
+      width: 300px;
+      line-height: 30px;
+      font-size: 24px;
+    }
+  }
+  .form-gender{
+
+  }
+
+  .btnGetInfo{
+    border: 1px solid orange;
+  }
+}
